@@ -58,7 +58,11 @@
             <div class="container">
                 <div id="checkout-login" class="coupon-content" style="display: block;">
                     <div class="coupon-info">
-                        <form action="processfront/postlogin.php" method="post">
+                        <form action="processfront/postregister.php" method="post">
+                            <p class="form-row-first">
+                                <label>Name <span class="required">*</span></label>
+                                <input type="text" name="name" required>
+                            </p>
                             <p class="form-row-first">
                                 <label>Email <span class="required">*</span></label>
                                 <input type="email" name="email" required>
@@ -67,9 +71,16 @@
                                 <label>Password  <span class="required">*</span></label>
                                 <input type="password" name="password">
                             </p>
+                            <p class="form-row-first">
+                                <label>Mobile <span class="required">*</span></label>
+                                <input type="text" name="mobile" required>
+                            </p>
+                            <p class="form-row-first">
+                                <label>Address <span class="required">*</span></label>
+                                <input type="text" name="address" required>
+                            </p>
                             <p class="form-row">
-                                <input value="Login" type="submit">
-                                <a class="btn btn-info" href="register.php">Register</a>
+                                <input value="Register" type="submit">
                             </p>
                         </form>
                     </div>

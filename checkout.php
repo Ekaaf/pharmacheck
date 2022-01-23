@@ -45,7 +45,7 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body style="background: #112241;">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
@@ -60,7 +60,7 @@
                     <div class="breadcrumb-content">
                         <ul>
                             <li><a href="index.php">Home</a></li>
-                            <li class="active">Pharamcy List</li>
+                            <li class="active">Checkout</li>
                         </ul>
                     </div>
                 </div>
@@ -72,9 +72,9 @@
                         <div class="col-lg-6 col-12">
                             
                                 <div class="checkbox-form">
-                                    <h3>Billing Details</h3>
+                                    <h3 style="color:white;">Billing Details</h3>
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <!-- <div class="col-md-12">
                                             <div class="checkout-form-list">
                                                 <label>Name<span class="required">*</span></label>
                                                 <input placeholder="" type="text" name="name">
@@ -85,17 +85,46 @@
                                                 <label>Email<span class="required">*</span></label>
                                                 <input placeholder="" type="text" name="email">
                                             </div>
-                                        </div><div class="col-md-12">
+                                        </div>
+                                        <div class="col-md-12">
                                             <div class="checkout-form-list">
                                                 <label>Mobile<span class="required">*</span></label>
                                                 <input placeholder="" type="text" name="mobile">
                                             </div>
-                                        </div><div class="col-md-12">
+                                        </div> -->
+                                        <p class="form-row col-md-12">
+                                            <div style="width:10%;">
+                                                <input type="checkbox" style="height:25px;" id="change">
+                                            </div>
+                                            <div style="width: 80%;color:white;" >Change Shipping Address</div>
+                                        </p>
+                                        <div class="col-md-12">
                                             <div class="checkout-form-list">
-                                                <label>Shipping Address<span class="required">*</span></label>
-                                                <input placeholder="" type="text" name="address">
+                                                <label style="color:white;">Shipping Address<span class="required">*</span></label>
+                                                <input placeholder="" type="text" name="address" id="address" value="<?php echo $_SESSION['user']['address']; ?>" readonly>
                                             </div>
                                         </div>
+
+                                        <div class="col-md-12">
+                                            <div class="checkout-form-list">
+                                                <label style="color:white;">Delivery Type<span class="required">*</span></label>
+                                                <select class="form-control" name="delivery_type" id="delivery_type">
+                                                    <option value="Home Delivery">Home Delivery</option>
+                                                    <option value="PickUp">PickUp</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="checkout-form-list">
+                                                <label style="color:white;">Payment Method<span class="required">*</span></label>
+                                                <select class="form-control" name="payment_method" id="payment_method">
+                                                    <option value="Card">Card</option>
+                                                    <option value="Bkash">Bkash</option>
+                                                    <option value="COD">Cash On Delivery</option>
+                                                </select>
+                                            </div>
+                                        </div> 
                                     </div>
                                 </div>
                         </div>
@@ -204,6 +233,15 @@
         <!-- Main/Activator js -->
         <script src="js/main.js"></script>
         <script src="custom.js"></script>
+        <script type="text/javascript">
+            $("#change").change(function() {
+                if(this.checked) {
+                    $('#address').prop('readonly',false);
+                }else{
+                    $('#address').prop('readonly',true);
+                }
+            });
+        </script>
     </body>
 
 <!-- index30:23-->

@@ -7,12 +7,18 @@
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
-                $_SESSION['user'] = $row;
+                if($row['role'] !=1){
+                    header("Location: http://localhost/pharmacheck/admin/login.php?success=true&errorMessage=You don't have permission to access this page");
+                    exit;
+                }
+                else{
+                    $_SESSION['user'] = $row;
+                };
             }
           header("Location: http://localhost/pharmacheck/admin/add_pharmacy.php");
         }
         else{
-            header("Location: http://localhost/pharmacheck/login.php?success=true&errorMessage=Username and Password do not match.");
+            header("Location: http://localhost/pharmacheck/admin/login.php?success=true&errorMessage=Username and Password do not match.");
         }
     }
     

@@ -45,7 +45,7 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body style="background: #112241;">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
@@ -94,45 +94,31 @@
                         <div class="col-lg-12">
                             <div class="li-section-title">
                                 <h2>
-                                    <span>Medicines</span>
+                                    <span style="color:white;">Our Services</span>
                                 </h2>
                             </div>
                             <div class="row">
-                                <?php 
-                                    include('admin/process/connection.php');
-                                    $sql = "SELECT * FROM medicines";
-                                    $result = $conn->query($sql);
-                                    $pharm = [];
-                                    if ($result->num_rows > 0) {
-                                      while($row = $result->fetch_assoc()) {
-                                      
-                                ?>
-                                <div class="single-product-wrap" style="width:20%; padding: 2%;">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img src="admin/<?php echo $row['image'] ?>" alt="Li's Product Image" >
-                                        </a>
-                                    </div>
-                                    <div class="product_desc">
-                                        <div class="product_desc_info">
-                                            <h4><a class="product_name" href="single-product.html"><?php echo $row['medicine'] ?></a></h4>
-                                            <div class="price-box">
-                                                <span class="new-price">BDT <?php echo $row['price'] ?></span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                <div class="card" style="width: 30%;margin-right: 5%;">
+                                    <img src="images/custom/1.webp" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Upload Your Prescription</h5>
+                                    <a href="#" class="btn btn-primary">Upload</a>
+                                  </div>
                                 </div>
-                                <?php
-                                }
-                                    }
-                                ?>
+                                <div class="card" style="width: 30%;margin-right: 5%;">
+                                  <img src="images/custom/2.webp" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">Search Pharmacy</h5>
+                                    <a href="#" class="btn btn-primary">Search</a>
+                                  </div>
+                                </div>
+                                <div class="card" style="width: 30%;right: 0;">
+                                  <img src="images/custom/2.webp" class="card-img-top" alt="...">
+                                  <div class="card-body">
+                                    <h5 class="card-title">24/7 Help Line</h5>
+                                    <a href="#" class="btn btn-primary">Call Now</a>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                         <!-- Li's Section Area End Here -->
@@ -148,39 +134,37 @@
                         <div class="col-lg-12">
                             <div class="li-section-title">
                                 <h2>
-                                    <span>Best Selling Products</span>
+                                    <span style="color: white;">Best Selling Products</span>
                                 </h2>
                             </div>
                             <div class="row">
-                                <div class="product-active owl-carousel">
-                                    <div class="col-lg-12">
-                                        <!-- single-product-wrap start -->
-                                        <div class="single-product-wrap">
-                                            <div class="product-image">
-                                                <a href="single-product.html">
-                                                    <img src="images/custom/paracetamol.jpg" alt="Li's Product Image">
-                                                </a>
-                                                <span class="sticker">New</span>
-                                            </div>
-                                            <div class="product_desc">
-                                                <div class="product_desc_info">
-                                                    <h4><a class="product_name" href="single-product.html">ACE 250</a></h4>
-                                                    <div class="price-box">
-                                                        <span class="new-price">BDT 50</span>
-                                                    </div>
-                                                </div>
-                                                <div class="add-actions">
-                                                    <ul class="add-actions-link">
-                                                        <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                        <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                        <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                <?php 
+                                    include('admin/process/connection.php');
+                                    $sql = "SELECT medicines.* FROM medicines ORDER BY RAND() LIMIT 10";
+                                    $result = $conn->query($sql);
+                                    $pharm = [];
+                                    if ($result->num_rows > 0) {
+                                      while($row = $result->fetch_assoc()) {
+                                      
+                                ?>
+                                <div class="col-md-3" style="margin-bottom:2%;">
+                                    <div class="card" >
+                                        <img class="card-img-top img-fluid" src="admin/<?php echo $row['image']; ?>" alt="Card image cap">
+                                        <div class="card-body">
+                                        <h5 class="card-title"><?php echo $row['medicine'];?></h5>
+                                            <p class="card-text">
+                                                <b>Brand: </b> <?php echo $row['brand'] ?>
+                                                <br>
+                                                <b>Description: </b> <?php echo $row['description'] ?>
+                                            </p>
+                                            <a href="med_details.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View Details</a>
                                         </div>
-                                        <!-- single-product-wrap end -->
                                     </div>
                                 </div>
+                                <?php
+                                }
+                                    }
+                                ?>
                             </div>
                         </div>
                         <!-- Li's Section Area End Here -->
@@ -195,38 +179,31 @@
                         <div class="col-lg-12">
                             <div class="li-section-title">
                                 <h2>
-                                    <span>New Arrivals</span>
+                                    <span style="color: white;">New Arrivals</span>
                                 </h2>
                             </div>
                             <div class="row">
+                                <div class="row">
                                 <?php 
                                     include('admin/process/connection.php');
-                                    $sql = "SELECT * FROM medicines where new_arrival = 1";
+                                    $sql = "SELECT medicines.* FROM medicines where new_arrival = 1 ORDER BY RAND() LIMIT 10";
                                     $result = $conn->query($sql);
                                     $pharm = [];
                                     if ($result->num_rows > 0) {
                                       while($row = $result->fetch_assoc()) {
                                       
                                 ?>
-                                <div class="single-product-wrap" style="width:20%; padding: 2%;">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img src="admin/<?php echo $row['image'] ?>" alt="Li's Product Image" >
-                                        </a>
-                                    </div>
-                                    <div class="product_desc">
-                                        <div class="product_desc_info">
-                                            <h4><a class="product_name" href="single-product.html"><?php echo $row['medicine'] ?></a></h4>
-                                            <div class="price-box">
-                                                <span class="new-price">BDT <?php echo $row['price'] ?></span>
-                                            </div>
-                                        </div>
-                                        <div class="add-actions">
-                                            <ul class="add-actions-link">
-                                                <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                <li><a href="#" title="quick view" class="quick-view-btn" data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-eye"></i></a></li>
-                                            </ul>
+                                <div class="col-md-3" style="margin-bottom:2%;">
+                                    <div class="card" >
+                                        <img class="card-img-top img-fluid" src="admin/<?php echo $row['image']; ?>" alt="Card image cap">
+                                        <div class="card-body">
+                                        <h5 class="card-title"><?php echo $row['medicine'];?></h5>
+                                            <p class="card-text">
+                                                <b>Brand: </b> <?php echo $row['brand'] ?>
+                                                <br>
+                                                <b>Description: </b> <?php echo $row['description'] ?>
+                                            </p>
+                                            <a href="med_details.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View Details</a>
                                         </div>
                                     </div>
                                 </div>
@@ -246,8 +223,8 @@
                     <!-- Begin Li's Section Area -->
                     <div class="col-lg-12">
                         <h2>
-                                <span>Why Choose Us?</span>
-                            </h2>
+                            <span style="color: white;">Why Choose Us?</span>
+                        </h2>
                     </div>
                 </div>
             </div>

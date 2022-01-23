@@ -15,7 +15,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Pharmacy</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Pharmacy List</li>
+                    <li class="breadcrumb-item active" aria-current="page">Add Pharmacy</li>
                 </ol>
             </nav>
 
@@ -46,7 +46,7 @@
                                 <td><?=$row['closing_time'];?></td>
                                 <td><?=$row['delivery_type'];?></td>
                                 <th>
-                                    <button type="button" class="btn btn-success"><a href="edit_pharmacy.php?id=<?php echo $row['id']; ?>" style="color: white;">Edit</a></button>
+                                    <button type="button" class="btn btn-success">Edit</button>
                                     <button type="button" class="btn btn-danger" onclick="deletePharmacy('<?php echo $row['id']; ?>');">Delete</button>
                                 </th>
                             </tr>

@@ -45,21 +45,25 @@
         }
       }
     </style>
-
-    
+<!-- 
+    style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,97,90,1) 35%, rgba(0,212,255,1) 100%);" -->
     <!-- Custom styles for this template -->
     <link href="css/signin.css" rel="stylesheet">
   </head>
-  <body class="text-center">
+  <body class="text-center" style='background-image: url("public/login.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;'>
 <main class="form-signin">
   <form action="process/postlogin.php" method="post">
-    <img class="mb-4" src="http://localhost/pharmacheck/images/custom/logo.jpg" alt="" width="72" height="57">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <img class="mb-4" src="http://localhost/pharmacheck/images/custom/logo.png" alt="" style="width:50%;">
+    <h1 class="h3 mb-3 fw-normal" style="color:white;">Please sign in</h1>
     <?php
         if(isset($_GET['errorMessage'])){
     ?>
     <div class="alert alert-danger" role="alert">
-      <?php echo $errorMessage; ?>
+      <?php echo $_GET['errorMessage']; ?>
     </div>
     <?php }?>
     <div class="form-floating">

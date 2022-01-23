@@ -5,10 +5,11 @@
             <div class="row">
                 <!-- Begin Header Logo Area -->
                 <div class="col-lg-3">
-                    <div class="logo pb-sm-30 pb-xs-30">
+                    <div class="logo pb-sm-30 pb-xs-30" style="color:white;">
                         <a href="index.php">
-                            <img src="images/custom/logo.jpg" alt="" style="width: 50px;">
+                            <img src="images/custom/logo.png" alt="" style="width: 50px;">
                         </a>
+                        Pharmacheck
                     </div>
                 </div>
                 <!-- Header Logo Area End Here -->
@@ -17,7 +18,8 @@
                     <!-- Begin Header Middle Searchbox Area -->
                     <form action="#" class="hm-searchbox">
                         <input type="text" placeholder="Search by medicine ...">
-                        <button class="li-btn" type="submit"><i class="fa fa-search" style="color: white;"></i></button>
+                        <button class="li-btn" type="submit" style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,97,82,1) 44%, rgba(0,212,255,1) 100%);"><i class="fa fa-search" style="color: white;"></i></button>
                     </form>
                     <div class="header-middle-right">
                         <ul class="hm-menu">
@@ -37,7 +39,8 @@
     </div>
     <!-- Header Middle Area End Here -->
     <!-- Begin Header Bottom Area -->
-    <div class="header-bottom header-sticky d-none d-lg-block d-xl-block">
+    <div class="header-bottom header-sticky d-none d-lg-block d-xl-block" style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,97,82,1) 44%, rgba(0,212,255,1) 100%);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -58,6 +61,7 @@
                                     <ul class="hb-dropdown">
                                         <li><a href="profile.php">Profile</a></li>
                                         <li><a href="orders.php">Orders</a></li>
+                                        <li><a href="processfront/logout.php">Logout</a></li>
                                     </ul>
                                 </li>
                                 <?php } else{?>

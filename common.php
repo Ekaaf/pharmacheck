@@ -27,7 +27,7 @@
         
         // var_dump($cart);exit();
         $_SESSION['cart'] = $cart;
-        header("Location: http://localhost/pharmacheck/pharmacy_med.php?id=".$med_id);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
 
     if(isset($_GET['medid']) && isset($_GET['type'])){

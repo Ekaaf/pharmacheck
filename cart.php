@@ -1,7 +1,8 @@
 <?php
     // session_start();
 ?>
-<div class="hm-minicart-trigger">
+<div class="hm-minicart-trigger" style="background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,97,82,1) 44%, rgba(0,212,255,1) 100%);">
     <span class="item-icon"></span>
     <span class="item-text"><span id="total">BDT 0</span>
         <span class="cart-item-count"><?php if(isset($_SESSION['cart'])) echo count($_SESSION['cart']); else echo 0; ?></span>
@@ -44,7 +45,7 @@
         if(count($cart)>0){
     ?>
     <div class="minicart-button">
-        <a href="checkout.php" class="li-button li-button-fullwidth">
+        <a href="<?php if(isset($_SESSION['user'])) echo 'checkout.php'; else echo 'login.php'; ?>" class="li-button li-button-fullwidth">
             <span>Checkout</span>
         </a>
     </div>

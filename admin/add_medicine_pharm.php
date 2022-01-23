@@ -14,9 +14,9 @@
     }
 ?>
 <body>
-    <main>
+    <main style="background: #bddee9;">
         <?php
-            include('layout/sidebar2.php');
+            include('layout/sidebar.php');
         ?>
 
         <div class="container">

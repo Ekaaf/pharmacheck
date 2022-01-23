@@ -45,12 +45,12 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body style="background: #112241;">
     	<?php 
             include('admin/process/connection.php');
-            $med_id = $_GET['id'];
+            $pharm_id = $_GET['id'];
             $med_name = "";
-            $sql = "SELECT * from medicines where id= ".$med_id;
+            $sql = "SELECT medicines.* FROM medicines INNER JOIN medicine_pharmacy ON medicines.id = medicine_pharmacy.med_id WHERE pharm_id =".$pharm_id;
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
               while($row = $result->fetch_assoc()) {
@@ -85,57 +85,37 @@
             </div>
 
             
-            <div class="content-wraper">
+            <div class="about-us-wrapper pt-60 pb-40">
                 <div class="container">
-                    <div class="row single-product-area">
-                        <div class="col-lg-5 col-md-6">
-                           <!-- Product Details Left -->
-                            <div class="product-details-left">
-                                <div class="product-details-images slider-navigation-1">
-                                    <div class="lg-image">
-                                        <a class="popup-img venobox vbox-item" href="admin/<?php echo $med['image'];?>" data-gall="myGallery">
-                                            <img src="admin/<?php echo $med['image'];?>" alt="product image">
-                                        </a>
-                                    </div>
+                    <div class="row">
+                        <?php 
+                            include('admin/process/connection.php');
+                            $pharm_id = $_GET['id'];
+                            $sql = "SELECT medicines.* FROM medicines INNER JOIN medicine_pharmacy ON medicines.id = medicine_pharmacy.med_id WHERE pharm_id =".$pharm_id;
+                            $result = $conn->query($sql);
+                            $pharm = [];
+                            if ($result->num_rows > 0) {
+                              while($row = $result->fetch_assoc()) {
+                              
+                        ?>
+                        <div class="col-md-3">
+                            <div class="card" style="width: 18rem;">
+                                <img class="card-img-top img-fluid" src="admin/<?php echo $row['image']; ?>" alt="Card image cap">
+                                <div class="card-body">
+                                <h5 class="card-title"><?php echo $row['medicine'];?></h5>
+                                <p class="card-text">
+                                    <b>Brand: </b> <?php echo $row['brand'] ?>
+                                    <br>
+                                    <b>Description: </b> <?php echo $row['description'] ?>
+                                </p>
+                                <a href="med_details.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View Details</a>
                                 </div>
                             </div>
-                            <!--// Product Details Left -->
                         </div>
-
-                        <div class="col-lg-7 col-md-6">
-                            <div class="product-details-view-content pt-60">
-                                <div class="product-info">
-                                    <h2><?php echo $med['medicine']?></h2>
-                                    
-                                    <div class="price-box pt-20">
-                                        <span class="new-price new-price-2">BDT<?php echo $med['price']; ?></option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="product-desc">
-                                        <p>
-                                            <span>
-                                                <?php echo $med['description']; ?>
-                                            </span>
-                                        </p>
-                                    </div>
-                                    <div class="single-add-to-cart">
-                                        <form action="#" class="cart-quantity">
-                                            <div class="quantity">
-                                                <label>Quantity</label>
-                                                <div class="cart-plus-minus">
-                                                    <input class="cart-plus-minus-box" value="1" type="text" id="quantity"> 
-                                                    <div class="dec qtybutton"><i class="fa fa-angle-down"></i></div>
-                                                    <div class="inc qtybutton"><i class="fa fa-angle-up"></i></div>
-                                                </div>
-                                            </div>
-                                            <button class="add-to-cart" type="button" style="color: white;" onclick="addtocart(<?php echo $med['id']; ?>)">Add to cart</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
+                        <?php
+                        }
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -145,7 +125,7 @@
                     <!-- Begin Li's Section Area -->
                     <div class="col-lg-12">
                         <h2>
-                                <span>Why Choose Us?</span>
+                                <span style="color: white;">Why Choose Us?</span>
                             </h2>
                     </div>
                 </div>

@@ -45,7 +45,7 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body style="background: #112241;">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
@@ -60,7 +60,7 @@
                     <div class="breadcrumb-content">
                         <ul>
                             <li><a href="index.php">Home</a></li>
-                            <li class="active">About Us</li>
+                            <li class="active">Message</li>
                         </ul>
                     </div>
                 </div>

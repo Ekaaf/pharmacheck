@@ -45,7 +45,7 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body style="background: #112241;">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
@@ -102,7 +102,7 @@
                     <!-- Begin Li's Section Area -->
                     <div class="col-lg-12">
                         <h2>
-                                <span>Why Choose Us?</span>
+                                <span style="color: white;">Why Choose Us?</span>
                             </h2>
                     </div>
                 </div>

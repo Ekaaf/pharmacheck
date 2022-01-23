@@ -64,6 +64,7 @@
           </ul>
         </div>
       </li>
+      <li style=""><a href="logout.php" class="link-dark rounded">Logout</a></li>
     </ul>
   </div>
 

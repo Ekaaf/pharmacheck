@@ -45,7 +45,7 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body style="background: #112241;">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
@@ -79,7 +79,7 @@
                               
                         ?>
                         <div class="col-md-3">
-                            <div class="card" style="width: 18rem;">
+                            <div class="card" >
                                 <img class="card-img-top img-fluid" src="admin/<?php echo $row['image']; ?>" alt="Card image cap">
                                 <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['medicine'];?></h5>
@@ -88,7 +88,7 @@
                                     <br>
                                     <b>Description: </b> <?php echo $row['description'] ?>
                                 </p>
-                                <a href="pharmacy_med.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View Details</a>
+                                <a href="med_details.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View Details</a>
                               </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                     <!-- Begin Li's Section Area -->
                     <div class="col-lg-12">
                         <h2>
-                                <span>Why Choose Us?</span>
+                                <span style="color: white;">Why Choose Us?</span>
                             </h2>
                     </div>
                 </div>
