@@ -45,7 +45,7 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body style="background: #112241;">
+    <body style="background-image: linear-gradient(#21042c, #af82c0);height: 100vh;">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
@@ -55,7 +55,40 @@
             <?php 
                 include('header.php');
             ?>
-            <div class="container">
+
+            <div class="body-wrapper" style="padding-top:2%;">
+                <!-- Begin Header Area -->
+                <div class="container" style="background: white; display: flex; padding: 2%;box-shadow: 6px 7px 5px 0px rgba(0,0,0,0.75); -webkit-box-shadow: 6px 7px 5px 0px rgba(0,0,0,0.75); -moz-box-shadow: 6px 7px 5px 0px rgba(0,0,0,0.75);">
+                    <div style="width: 50%;float: left;">
+                        <h2 style="text-align:center;font-size: 50px;color: #721695;font-family: logofont;">Pharmacheck</h2>
+                        <img src="images/custom/logo.png" style="width:100%;">
+                    </div>
+                    <div style="width: 50%;float: right;">
+                        <div id="checkout-login" class="coupon-content" style="display: block;height: 100%;border: 3px solid #b79fb7;">
+                            <div class="coupon-info">
+                                <form action="processfront/postlogin.php" method="post">
+                                    <p class="form-row-first">
+                                        <label>Email <span class="required">*</span></label>
+                                        <input type="email" name="email" required style="border: 2px solid #b79fb7;">
+                                    </p>
+                                    <p class="form-row-last">
+                                        <label>Password  <span class="required">*</span></label>
+                                        <input type="password" name="password" style="border: 2px solid #b79fb7;">
+                                    </p>
+                                    <p class="form-row">
+                                        <input value="Login" type="submit">
+                                        <a class="btn btn-info" href="register.php">Register</a>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Area End Here -->
+                <!-- Begin Quick View | Modal Area -->
+               
+            </div>
+            <!-- <div class="container">
                 <div id="checkout-login" class="coupon-content" style="display: block;">
                     <div class="coupon-info">
                         <form action="processfront/postlogin.php" method="post">
@@ -74,7 +107,7 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Footer Area End Here -->
             <!-- Begin Quick View | Modal Area -->
            

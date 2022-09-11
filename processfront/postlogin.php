@@ -9,7 +9,7 @@
             while($row = $result->fetch_assoc()) {
                 $_SESSION['user'] = $row;
             }
-          header("Location: http://localhost/pharmacheck/");
+          header("Location: http://localhost/pharmacheck/index.php");
         }
         else{
             header("Location: http://localhost/pharmacheck/message.php?success=true&message=Username and Password do not match.");

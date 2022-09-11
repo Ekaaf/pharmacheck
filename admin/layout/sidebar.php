@@ -31,7 +31,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="add_pharmacy.php" class="nav-link text-white" aria-current="page">
+            <a href="orders.php" class="nav-link text-white" aria-current="page">
                 Orders
             </a>
         </li>

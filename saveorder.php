@@ -8,9 +8,11 @@
 		$address = $_POST['address'];
 		$delivery_type = $_POST['delivery_type'];
 		$payment_method = $_POST['payment_method'];
+		$date = date('Y-m-d H:i:s');
 
 		$user_id = $_SESSION['user']['id'];
-		$sql = "INSERT INTO orders (order_date, total, delivery_address, user_id, delivery_type, payment_method) VALUES ('{$date}', '{$total}', '{$address}','{$user_id}')";
+		$sql = "INSERT INTO orders (order_date, total, delivery_address, user_id, delivery_type, payment_method) VALUES ('{$date}', '{$total}', '{$address}','{$user_id}','{$delivery_type}','{$payment_method}')";
+		// var_dump($sql);exit;
 		if ($conn->query($sql) === TRUE) {
 			$cart = $_SESSION['cart'];
 			$order_id = $conn->insert_id;
@@ -26,12 +28,5 @@
 		}
 		unset($_SESSION['cart']);
 		header("Location: http://localhost/pharmacheck/message.php?success=true&message=Order Completed Successfully.");
-
-		if ($conn->query($sql) === TRUE) {
-			
-		} else {
-			var_dump($conn->error);exit;
-			header("Location: http://localhost/pharmacheck/admin/message.php?error=true&message={$conn->error}");
-		}
 	}
 ?>

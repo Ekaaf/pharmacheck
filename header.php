@@ -51,8 +51,8 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,97,82,1) 44%, rgba
                                 <li><a href="index.php">Home</a></li>
                                 <li><a href="pharmacylist.php">Pharmacy</a></li>
                                 <li><a href="medicines.php">Medicines</a></li>
-                                <li><a href="aboutus.html">About Us</a></li>
-                                <li><a href="contact.html">Contact Us</a></li>
+                                <li><a href="aboutus.php">About Us</a></li>
+                                <li><a href="contact.php">Contact Us</a></li>
                                 <?php 
                                     if(isset($_SESSION['user'])){
                                 ?>

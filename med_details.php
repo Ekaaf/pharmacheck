@@ -45,7 +45,7 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body style="background: #112241;">
+    <body style="background-image: linear-gradient(#21042c, #af82c0);height: 100vh;">
     	<?php 
             include('admin/process/connection.php');
             $med_id = $_GET['id'];

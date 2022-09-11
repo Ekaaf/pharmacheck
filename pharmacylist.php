@@ -45,7 +45,7 @@
         <!-- Modernizr js -->
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body style="background: #112241;">
+    <body style="background-image: linear-gradient(#21042c, #af82c0);height: 100vh;">
     <!--[if lt IE 8]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->

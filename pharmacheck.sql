@@ -32,15 +32,6 @@ CREATE TABLE `guest_users` (
 
 /*Data for the table `guest_users` */
 
-insert  into `guest_users`(`id`,`name`,`email`,`mobile`,`address`,`created_at`) values 
-(1,'test2','mahmudul.hasan@northsouth.edu','01766833859','test','2022-01-17 18:10:02'),
-(2,'test2','mahmudul.hasan@northsouth.edu','01766833859','test','2022-01-17 18:10:13'),
-(3,'admission_result_approval','mahmudul.hasan@northsouth.edu','01766833859','test','2022-01-17 18:10:46'),
-(4,'admission_result_approval','mahmudul.hasan@northsouth.edu','01766833859','test','2022-01-17 18:10:57'),
-(5,'admission_result_approval','mahmudul.hasan@northsouth.edu','01766833859','test','2022-01-17 18:12:34'),
-(6,'admission_result_approval','mahmudul.hasan@northsouth.edu','01766833859','test','2022-01-17 18:13:02'),
-(7,'admission_result_approval','mahmudul.hasan@northsouth.edu','01766833859','test','2022-01-17 18:13:33'),
-(8,'','','','','2022-01-17 18:17:09');
 
 /*Table structure for table `medicine_pharmacy` */
 
@@ -119,15 +110,6 @@ CREATE TABLE `orders` (
 
 /*Data for the table `orders` */
 
-insert  into `orders`(`id`,`type`,`order_date`,`total`,`delivery_date`,`delivery_address`,`user_id`) values 
-(1,'guest','2022-01-17 13:10:02',0,'0000-00-00 00:00:00',NULL,1),
-(2,'guest','2022-01-17 13:10:13',366,'0000-00-00 00:00:00',NULL,2),
-(3,'guest','2022-01-17 13:10:46',366,'0000-00-00 00:00:00',NULL,3),
-(4,'guest','2022-01-17 13:10:57',366,'0000-00-00 00:00:00',NULL,4),
-(5,'guest','2022-01-17 13:12:34',366,'0000-00-00 00:00:00',NULL,5),
-(6,'guest','2022-01-17 13:13:02',366,'0000-00-00 00:00:00',NULL,6),
-(7,'guest','2022-01-17 13:13:33',366,'0000-00-00 00:00:00',NULL,7),
-(8,'guest','2022-01-17 13:17:09',0,'0000-00-00 00:00:00',NULL,8);
 
 /*Table structure for table `pharmacies` */
 

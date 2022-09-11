@@ -13,9 +13,9 @@ if(isset($_POST)){
 
 
 	if ($conn->query($sql) === TRUE) {
-		header("Location: http://localhost/pharmacheck/admin/login.php?success=true&message=Registerd successfully.");
+		header("Location: http://localhost/pharmacheck/login.php?success=true&message=Registerd successfully.");
 	} else {
-		header("Location: http://localhost/pharmacheck/admin/message.php?error=true&message={$conn->error}");
+		header("Location: http://localhost/pharmacheck/message.php?error=true&message={$conn->error}");
 	}
 }
 

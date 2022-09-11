@@ -2,7 +2,7 @@
 <html class="no-js" lang="zxx">
 <?php 
     include('common.php');
-?>   
+?>  
 <!-- index28:48-->
 <head>
         <meta charset="utf-8">
@@ -60,54 +60,65 @@
                     <div class="breadcrumb-content">
                         <ul>
                             <li><a href="index.php">Home</a></li>
-                            <li class="active">Pharamcy List</li>
+                            <li class="active">Message</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <form action="saveorder.php" method="post">
-            <div class="about-us-wrapper pt-60 pb-40">
+
+            <div class="about-us-wrapper pt-40">
                 <div class="container">
-                   <div class="row">
-                        <div class="col-lg-6 col-12">
-                                <?php
-                                    // var_dump($_SESSION['user']['email']);exit;
-                                ?>
-                                <div class="checkbox-form">
-                                    <h3>Profile</h3>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Name<span class="required">*</span></label>
-                                                <input placeholder="" type="text" name="name" value="<?php echo $_SESSION['user']['name'] ?>">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Email<span class="required">*</span></label>
-                                                <input placeholder="" type="text" name="email" value="<?php echo $_SESSION['user']['email'] ?>">
-                                            </div>
-                                        </div><div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Mobile<span class="required">*</span></label>
-                                                <input placeholder="" type="text" name="mobile" value="<?php echo $_SESSION['user']['mobile'] ?>" disabled>
-                                            </div>
-                                        </div><div class="col-md-12">
-                                            <div class="checkout-form-list">
-                                                <label>Shipping Address<span class="required">*</span></label>
-                                                <input placeholder="" type="text" name="address" value="<?php echo $_SESSION['user']['address'] ?>" disabled>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
-            </form>
-            
+            <div class="content-wraper">
+                <div class="container" style="background:white;">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <th>Medicine</th>
+                        <th>Order Date</th>
+                        <th>Price</th>
+                        <th>Delivery Address</th>
+                        <th>Delivery Type</th>
+                        <th>Payment Method</th>
+                        <th>Delivery Date</th>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $sql = "SELECT orders.*, GROUP_CONCAT(medicines.medicine) as medicine FROM orders INNER JOIN order_medicines ON orders.id = order_medicines.order_id INNER JOIN medicines ON medicines.id = order_medicines.med_id where orders.user_id=".$_SESSION['user']['id'];
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                              while($row = $result->fetch_assoc()) {
+                                // var_dump($row);exit;
+                        ?>
+                        <tr>
+                            <td><?php echo $row['medicine'] ?></td>
+                            <td><?php echo $row['order_date'] ?></td>
+                            <td><?php echo $row['total'] ?></td>
+                            <td><?php echo $row['delivery_address'] ?></td>
+                            <td><?php echo $row['delivery_type'] ?></td>
+                            <td><?php echo $row['payment_method'] ?></td>
+                            <td>
+                                <?php 
+                                    if(is_null($row['delivery_date'])){
+                                        echo "Not Delivered";
+                                    }
+                                    else{
+                                        echo $row['delivery_date'];
+                                    }
+                                ?>
+                            </td>
+                        </tr>
+
+                        <?php }}?>
+                    </tbody>
+                </table>
+                </div>
+            </div>
             <!-- Footer Area End Here -->
             <!-- Begin Quick View | Modal Area -->
+           
         </div>
         <!-- Body Wrapper End Here -->
         <!-- jQuery-V1.12.4 -->
