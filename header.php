@@ -53,11 +53,12 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(41,97,82,1) 44%, rgba
                                 <li><a href="medicines.php">Medicines</a></li>
                                 <li><a href="aboutus.php">About Us</a></li>
                                 <li><a href="contact.php">Contact Us</a></li>
+                                <li><a href="helpline.php">HelpLine</a></li>
                                 <?php 
                                     if(isset($_SESSION['user'])){
                                 ?>
                                 <li class="dropdown-holder" style="float: right;">
-                                    <a href="#">Account</a>
+                                    <a href="#">Account (<?php echo $_SESSION['user']['name']; ?>)</a>
                                     <ul class="hb-dropdown">
                                         <li><a href="profile.php">Profile</a></li>
                                         <li><a href="orders.php">Orders</a></li>
